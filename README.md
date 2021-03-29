@@ -1,4 +1,4 @@
-# pc_builder
+# Health and fitness
 
 ## Project setup
 ```
