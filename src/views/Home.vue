@@ -1,13 +1,26 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
+<div id="Pocetna_stranica">
+  <div class="home" >
+    
+ <div class="row">
+ <div class="col-2"><!--useless--></div>
+ <div class="col-8">
+   <center>
+<router-link >
+<button id="nextbutton" type="button" class="btn btn-primary btn-lg">Next</button></router-link>
+
+
+</center>
+ </div>
+ <div class="col-2">
+ <!--dont matter-->
+ </div>
+ </div>
+ </div>
+</div>
+ </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
@@ -16,3 +29,9 @@ export default {
   }
 }
 </script>
+
+<style >
+#Pocetna_stranica{
+  background-color: #2c3e50;
+}
+</style>
