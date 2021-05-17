@@ -57,6 +57,11 @@ const routes = [
     path: '/workouttracker',
     name: 'workouttracker',
     component: () => import(/* webpackChunkName: "workouttracker" */  '../views/workouttracker.vue')
+  },
+  {
+    path: '/caloriesresult',
+    name: 'caloriesresult',
+    component: () => import(/* webpackChunkName: "workouttracker" */  '../views/caloriesresult.vue')
   }
 ]
 

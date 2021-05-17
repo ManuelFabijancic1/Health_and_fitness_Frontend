@@ -32,7 +32,7 @@
 </div>
     </div>
   </div>
-            <div id="row2" class="row">
+            <div class="row">
                  <div class="col">
                      <div id="vjezbe" class="card" style="width: 18rem;">
                     <img src="@/assets/Glutebridge.png" class="card-img-top" alt="...">
@@ -75,8 +75,5 @@ export default {
 #vjezbe{
     background-color:#2C2C2C;
     color:white ;
-}
-#row2{
-margin-top: 7%;
 }
 </style>
