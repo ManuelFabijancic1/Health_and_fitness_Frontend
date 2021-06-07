@@ -9,16 +9,16 @@
   </div>
          <div id="row2" class="row">
              <div class="col">
-               <h1><span class="badge bg-secondary">5:30</span></h1>
+               <h1><span class="badge bg-secondary">{{this.variables.interval1_hours}}:{{this.variables.interval1_mins}} </span></h1>
              </div>
              <div class="col">
-                  <h1><span class="badge bg-secondary">7:00</span></h1>
+                  <h1><span class="badge bg-secondary">{{ this.variables.interval2_hours}}:{{this.variables.interval2_mins}} </span></h1>
              </div>
              <div class="col">
-                  <h1><span class="badge bg-secondary">8:30</span></h1>
+                  <h1><span class="badge bg-secondary">{{this.variables.interval3_hours}}:{{this.variables.interval3_mins}} </span></h1>
              </div>
               <div class="col">
-                   <h1><span class="badge bg-secondary">10:00</span></h1>
+                   <h1><span class="badge bg-secondary">{{this.variables.interval4_hours}}:{{this.variables.interval4_mins}} </span></h1>
               </div>
           </div>
            <div id="row3" class="row">
@@ -35,9 +35,20 @@
 
 <script>
 
+import variables from '@/variables.js'
 
 export default {
-    name:"wakeuptime",
+  
+    data() {
+    return{ 
+      variables,
+      
+      };
+    }, 
+
+ 
+
+
     }
 
 </script>
@@ -53,3 +64,5 @@ export default {
     margin-top:14%
 }
 </style>
+
+

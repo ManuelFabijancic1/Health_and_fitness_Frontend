@@ -9,16 +9,16 @@
   </div>
          <div id="row2" class="row">
              <div class="col">
-               <h1><span class="badge bg-secondary">10:30</span></h1>
+               <h1><span class="badge bg-secondary"> {{this.variables.bedtimeinterval1_hours}}:{{this.variables.bedtimeinterval1_mins}}</span></h1>
              </div>
              <div class="col">
-                  <h1><span class="badge bg-secondary">11:00</span></h1>
+                  <h1><span class="badge bg-secondary">{{this.variables.bedtimeinterval2_hours}}:{{this.variables.bedtimeinterval2_mins}}</span></h1>
              </div>
              <div class="col">
-                  <h1><span class="badge bg-secondary">12:30</span></h1>
+                  <h1><span class="badge bg-secondary">{{this.variables.bedtimeinterval3_hours}}:{{this.variables.bedtimeinterval3_mins}}</span></h1>
              </div>
               <div class="col">
-                   <h1><span class="badge bg-secondary">2:00</span></h1>
+                   <h1><span class="badge bg-secondary">{{this.variables.bedtimeinterval4_hours}}:{{this.variables.bedtimeinterval4_mins}}</span></h1>
               </div>
           </div>
            <div id="row3" class="row">
@@ -34,9 +34,20 @@
 </template>
 <script>
 
+import variables from '@/variables.js'
 
 export default {
-    name:"bedtime",
+  
+    data() {
+    return{ 
+      variables,
+      
+      };
+    }, 
+
+ 
+
+
     }
 
 </script>
