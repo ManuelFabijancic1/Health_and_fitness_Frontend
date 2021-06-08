@@ -1,42 +1,49 @@
 <template>
   <div class="container">
-    <div class='row'>
-        <div class='text'>Maintain weight: </div>
-        <div class='output'> 2674 cal/day</div>
-    </div><br>
-    <div class='row'>
-        <div class='text'>Mild weight loss: </div>
-        <div class='output'> 2424 cal/day</div>
-    </div><br>
-    <div class='row'>
-        <div class='text'>Weight loss: </div>
-        <div class='output'> 2714 cal/day</div>
-    </div><br>
-    <div class='row'>
-        <div class='text'>Extreme weight loss:</div>
-        <div class='output'> 1647 cal/day</div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-6">
+        <div class="row">
+          <h1 class="title">Maintain Weight:</h1>
+            <span>{{this.variables.maintain}}</span>
+         
+        </div>
+
+        <div class="row">
+          <h1 class="title">Weight loss/gain:</h1>
+             <span>{{this.variables.loss_gain}}</span>
+         
+        </div>
+
+
+        <router-link to="home"><button class="btn btn-primary" type="button">Go back</button></router-link>
+      </div>
+
+      <div class="col">
+        
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
 .row{
-    text-align: left;
-    font-size: 30px;
-    
+  padding-bottom: 40px;
 }
-.text{
-    color: white;
-    margin-bottom: 2px;
-}
-.output{
-    margin-left:3%;
+.title{
+  color: aliceblue;
 }
 
 </style>
 
 <script>
+import variables from '@/variables.js'
 export default {
   name: "caloriesresult",
+   data() {
+    return{ 
+      variables,
+      };
+    },
 };
 </script>

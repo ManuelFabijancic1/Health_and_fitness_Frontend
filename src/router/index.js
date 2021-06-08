@@ -34,9 +34,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "workoutmenager" */  '../views/workoutmenager.vue')
   },
   {
-    path: '/calorieintake',
-    name: 'calorieintake',
-    component: () => import(/* webpackChunkName: "calorieintake" */  '../views/CalorieIntakeCalculator.vue')
+    path: '/CalorieIntakeCalculator',
+    name: 'CalorieIntakeCalculator',
+    component: () => import(/* webpackChunkName: "calorieintakeCalculator" */  '../views/CalorieIntakeCalculator.vue')
   },
   {
     path: '/workoutresult',
@@ -59,9 +59,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "workouttracker" */  '../views/workouttracker.vue')
   },
   {
-    path: '/calorieresult',
-    name: 'calorieresult',
-    component: () => import(/* webpackChunkName: "calorieresult" */  '../views/calorieresult.vue')
+    path: '/caloriesresult',
+    name: 'caloriesresult',
+    component: () => import(/* webpackChunkName: "caloriesresult" */  '../views/caloriesresult.vue')
   },
   {
     path: '/variables',
@@ -76,4 +76,4 @@ const router = new VueRouter({
   routes
 })
 
-export default router
+export default router;

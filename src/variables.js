@@ -22,5 +22,18 @@ name:"variables",
     bedtimeinterval3_mins:"",
     bedtimeinterval4_hours:"",
     bedtimeinterval4_mins:"",
+
+//for calories
+    weight_gain_loss:"",
+    gender:"",
+    activity:"",
+    weight:"",
+    height:"",
+    age:"",
+
+    bmr:"",
+
+    maintain:"",
+    loss_gain:"",
  
 };
