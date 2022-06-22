@@ -126,17 +126,103 @@ export default {
  methods: {
    build_workout(){
     
-console.log("hello",store.workout_type,store.muscle_groups,store.workout_dificulty ) 
 
 
 
-fetch(`http://localhost:3000/Vjezbe/${this.store.muscle_groups[0]}?exercize_type=${this.store.workout_type}&exerciye_dificulty=${this.store.workout_dificulty}`)
+if(this.store.muscle_groups.includes("arms",[0]))
+{
+  fetch("http://localhost:3000/arms")
+ .then(response => {
+ return response.json()
+ })
+ .then(data => {
+ console.log("Podaci s backenda", data)
+ })
+ 
+console.log("arms")
+   }
+
+
+  /*
+ if(this.store.muscle_groups.includes("back",[0]))
+{
+   fetch(`http://localhost:3001/Vjezbe/back`)
  .then(Response => {
  return Response.json()
  })
  .then(data => {
  console.log("Podaci s backenda", data)
  })
+
+console.log("back")
+   }
+
+
+
+if(this.store.muscle_groups.includes("abs",[0]))
+{
+  fetch(`http://localhost:3001/Vjezbe/abs`)
+ .then(Response => {
+ return Response.json()
+ })
+ .then(data => {
+ console.log("Podaci s backenda", data)
+ })
+
+console.log("abs")
+   }
+
+
+
+
+  if(this.store.muscle_groups.includes("legs",[0]))
+{
+  fetch(`http://localhost:3001/Vjezbe/legs`)
+ .then(Response => {
+ return Response.json()
+ })
+ .then(data => {
+ console.log("Podaci s backenda", data)
+ })
+
+console.log("legs")
+   }
+
+
+ if(this.store.muscle_groups.includes("chest",[0]))
+{
+  fetch(`http://localhost:3001/Vjezbe/chest`)
+ .then(Response => {
+ return Response.json()
+ })
+ .then(data => {
+ console.log("Podaci s backenda", data)
+ })
+
+console.log("chest")
+   }
+
+
+
+
+
+if(this.store.muscle_groups[1]=="legs")
+{
+fetch(`http://localhost:3001/Vjezbe/${this.store.muscle_groups[1]}?exercize_type=${this.store.workout_type}&exerciye_dificulty=${this.store.workout_dificulty}`)
+ .then(Response => {
+ return Response.json()
+ })
+ .then(data => {
+ console.log("Podaci s backenda", data)
+ })
+   }
+
+
+
+
+*/
+
+
    }
    },
  }
