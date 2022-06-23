@@ -15,11 +15,11 @@
      <div  class="btn-group"  data-toggle="buttons" role="group" aria-label="Basic radio toggle button group">
          <div class="col">
            
-  <input type="radio" v-model="store.workout_type" class="btn-check" value="At home" name="btnradio" id="btnradio1" autocomplete="off" >
+  <input type="radio" v-model="store.workout_type" class="btn-check" value="Athome" name="btnradio" id="btnradio1" autocomplete="off" >
   <label class="btn btn-outline-dark" for="btnradio1">At home</label>
    </div>
 <div class="col">
-  <input type="radio" v-model="store.workout_type" class="btn-check" name="btnradio" value="In-gym" id="btnradio2" autocomplete="off" checked>
+  <input type="radio" v-model="store.workout_type" class="btn-check" name="btnradio" value="Ingym" id="btnradio2" autocomplete="off" checked>
   <label class="btn btn-outline-dark" for="btnradio2">In-gym</label>
 </div>
 
@@ -88,7 +88,7 @@
   <label class="btn btn-outline-dark" for="btnradio6">Intermidiate</label>
 </div>
 <div class="col">
-  <input type="radio" class="btn-check" name="btnradio2" id="btnradio7" value="Advaned" v-model="store.workout_dificulty" autocomplete="off">
+  <input type="radio" class="btn-check" name="btnradio2" id="btnradio7" value="Advanced" v-model="store.workout_dificulty" autocomplete="off">
   <label class="btn btn-outline-dark" for="btnradio7">Advanced</label>
 </div>
 </div>
@@ -129,24 +129,33 @@ export default {
 
 
 
+
 if(this.store.muscle_groups.includes("arms",[0]))
 {
-  fetch("http://localhost:3000/arms")
+  fetch(`http://localhost:3000/arms/${this.store.workout_type}/${this.store.workout_dificulty}`)
  .then(response => {
  return response.json()
  })
  .then(data => {
  console.log("Podaci s backenda", data)
+ this.store.map1 = data.map(doc => {
+ return {id: doc.id, name1: doc.exercize_name, howto: doc.how_to_do_exercize, type:doc.exercize_type, dificulty: doc.exerciye_dificulty}
+ 
  })
+``
+    console.log("Podaci s backenda", this.store.exercize_name1 )
+ })
+
+
  
 console.log("arms")
    }
 
 
-  /*
+  
  if(this.store.muscle_groups.includes("back",[0]))
 {
-   fetch(`http://localhost:3001/Vjezbe/back`)
+   fetch(`http://localhost:3000/back/${this.store.workout_type}/${this.store.workout_dificulty}`)
  .then(Response => {
  return Response.json()
  })
@@ -161,7 +170,7 @@ console.log("back")
 
 if(this.store.muscle_groups.includes("abs",[0]))
 {
-  fetch(`http://localhost:3001/Vjezbe/abs`)
+  fetch(`http://localhost:3000/abs/${this.store.workout_type}/${this.store.workout_dificulty}`)
  .then(Response => {
  return Response.json()
  })
@@ -177,7 +186,7 @@ console.log("abs")
 
   if(this.store.muscle_groups.includes("legs",[0]))
 {
-  fetch(`http://localhost:3001/Vjezbe/legs`)
+  fetch(`http://localhost:3000/legs/${this.store.workout_type}/${this.store.workout_dificulty}`)
  .then(Response => {
  return Response.json()
  })
@@ -191,7 +200,7 @@ console.log("legs")
 
  if(this.store.muscle_groups.includes("chest",[0]))
 {
-  fetch(`http://localhost:3001/Vjezbe/chest`)
+  fetch(`http://localhost:3000/chest/${this.store.workout_type}/${this.store.workout_dificulty}`)
  .then(Response => {
  return Response.json()
  })
@@ -206,26 +215,10 @@ console.log("chest")
 
 
 
-if(this.store.muscle_groups[1]=="legs")
-{
-fetch(`http://localhost:3001/Vjezbe/${this.store.muscle_groups[1]}?exercize_type=${this.store.workout_type}&exerciye_dificulty=${this.store.workout_dificulty}`)
- .then(Response => {
- return Response.json()
- })
- .then(data => {
- console.log("Podaci s backenda", data)
- })
-   }
+ },
 
-
-
-
-*/
-
-
-   }
-   },
  }
+}
 
 
 </script>
