@@ -1902,6 +1902,13 @@
   "resolved" "https://registry.npm.taobao.org/aws4/download/aws4-1.11.0.tgz?cache=0&sync_timestamp=1604101385256&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Faws4%2Fdownload%2Faws4-1.11.0.tgz"
   "version" "1.11.0"
 
+"axios@^0.21.1":
+  "integrity" "sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.21.4.tgz"
+  "version" "0.21.4"
+  dependencies:
+    "follow-redirects" "^1.14.0"
+
 "babel-eslint@^10.1.0":
   "integrity" "sha1-aWjlaKkQt4+zd5zdi2rC9HmUMjI="
   "resolved" "https://registry.npm.taobao.org/babel-eslint/download/babel-eslint-10.1.0.tgz"
@@ -3071,11 +3078,6 @@
   dependencies:
     "assert-plus" "^1.0.0"
 
-"data-uri-to-buffer@^4.0.0":
-  "integrity" "sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA=="
-  "resolved" "https://registry.npmjs.org/data-uri-to-buffer/-/data-uri-to-buffer-4.0.0.tgz"
-  "version" "4.0.0"
-
 "de-indent@^1.0.2":
   "integrity" "sha1-sgOOhG3DO6pXlhKNCAS0VbjB4h0="
   "resolved" "https://registry.npm.taobao.org/de-indent/download/de-indent-1.0.2.tgz"
@@ -3873,14 +3875,6 @@
   dependencies:
     "websocket-driver" ">=0.5.1"
 
-"fetch-blob@^3.1.2", "fetch-blob@^3.1.4":
-  "integrity" "sha512-N64ZpKqoLejlrwkIAnb9iLSA3Vx/kjgzpcDhygcqJ2KKjky8nCgUQ+dzXtbrLaWZGZNmNfQTsiQ0weZ1svglHg=="
-  "resolved" "https://registry.npmjs.org/fetch-blob/-/fetch-blob-3.1.5.tgz"
-  "version" "3.1.5"
-  dependencies:
-    "node-domexception" "^1.0.0"
-    "web-streams-polyfill" "^3.0.3"
-
 "figgy-pudding@^3.5.1":
   "integrity" "sha1-tO7oFIq7Adzx0aw0Nn1Z4S+mHW4="
   "resolved" "https://registry.npm.taobao.org/figgy-pudding/download/figgy-pudding-3.5.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffiggy-pudding%2Fdownload%2Ffiggy-pudding-3.5.2.tgz"
@@ -4020,7 +4014,7 @@
     "inherits" "^2.0.3"
     "readable-stream" "^2.3.6"
 
-"follow-redirects@^1.0.0":
+"follow-redirects@^1.0.0", "follow-redirects@^1.14.0":
   "integrity" "sha1-2RFN7Qoc/dM04WTmZirQK/2R/0M="
   "resolved" "https://registry.nlark.com/follow-redirects/download/follow-redirects-1.14.1.tgz"
   "version" "1.14.1"
@@ -4043,13 +4037,6 @@
     "asynckit" "^0.4.0"
     "combined-stream" "^1.0.6"
     "mime-types" "^2.1.12"
-
-"formdata-polyfill@^4.0.10":
-  "integrity" "sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g=="
-  "resolved" "https://registry.npmjs.org/formdata-polyfill/-/formdata-polyfill-4.0.10.tgz"
-  "version" "4.0.10"
-  dependencies:
-    "fetch-blob" "^3.1.2"
 
 "forwarded@~0.1.2":
   "integrity" "sha1-mMI9qxF1ZXuMBXPozszZGw/xjIQ="
@@ -5711,26 +5698,10 @@
   dependencies:
     "lower-case" "^1.1.1"
 
-"node-domexception@^1.0.0":
-  "integrity" "sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ=="
-  "resolved" "https://registry.npmjs.org/node-domexception/-/node-domexception-1.0.0.tgz"
-  "version" "1.0.0"
-
 "node-fetch@^2.6.1":
-  "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
-  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
-  "version" "2.6.7"
-  dependencies:
-    "whatwg-url" "^5.0.0"
-
-"node-fetch@^3.2.6":
-  "integrity" "sha512-LAy/HZnLADOVkVPubaxHDft29booGglPFDr2Hw0J1AercRh01UiVFm++KMDnJeH9sHgNB4hsXPii7Sgym/sTbw=="
-  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-3.2.6.tgz"
-  "version" "3.2.6"
-  dependencies:
-    "data-uri-to-buffer" "^4.0.0"
-    "fetch-blob" "^3.1.4"
-    "formdata-polyfill" "^4.0.10"
+  "integrity" "sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw=="
+  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.1.tgz"
+  "version" "2.6.1"
 
 "node-forge@^0.10.0":
   "integrity" "sha1-Mt6ir7Ppkm8C7lzoeUkCaRpna/M="
@@ -8029,11 +8000,6 @@
     "psl" "^1.1.28"
     "punycode" "^2.1.1"
 
-"tr46@~0.0.3":
-  "integrity" "sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw=="
-  "resolved" "https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz"
-  "version" "0.0.3"
-
 "tryer@^1.0.1":
   "integrity" "sha1-8shUBoALmw90yfdGW4HqrSQSUvg="
   "resolved" "https://registry.npm.taobao.org/tryer/download/tryer-1.0.1.tgz"
@@ -8450,16 +8416,6 @@
   dependencies:
     "defaults" "^1.0.3"
 
-"web-streams-polyfill@^3.0.3":
-  "integrity" "sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q=="
-  "resolved" "https://registry.npmjs.org/web-streams-polyfill/-/web-streams-polyfill-3.2.1.tgz"
-  "version" "3.2.1"
-
-"webidl-conversions@^3.0.0":
-  "integrity" "sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ=="
-  "resolved" "https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-3.0.1.tgz"
-  "version" "3.0.1"
-
 "webpack-bundle-analyzer@^3.8.0":
   "integrity" "sha1-9vlNsQj7V05BWtMT3kGicH0z7zw="
   "resolved" "https://registry.npm.taobao.org/webpack-bundle-analyzer/download/webpack-bundle-analyzer-3.9.0.tgz"
@@ -8602,14 +8558,6 @@
   "integrity" "sha1-f4RzvIOd/YdgituV1+sHUhFXikI="
   "resolved" "https://registry.npm.taobao.org/websocket-extensions/download/websocket-extensions-0.1.4.tgz"
   "version" "0.1.4"
-
-"whatwg-url@^5.0.0":
-  "integrity" "sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw=="
-  "resolved" "https://registry.npmjs.org/whatwg-url/-/whatwg-url-5.0.0.tgz"
-  "version" "5.0.0"
-  dependencies:
-    "tr46" "~0.0.3"
-    "webidl-conversions" "^3.0.0"
 
 "which-boxed-primitive@^1.0.2":
   "integrity" "sha1-E3V7yJsgmwSf5dhkMOIc9AqJqOY="
