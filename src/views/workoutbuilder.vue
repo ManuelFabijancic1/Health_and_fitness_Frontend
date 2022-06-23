@@ -1,130 +1,226 @@
 <template>
-<body >
-<div id="body2">
-  <div class="container">
-      <div class="row">
-      </div>
-          <div class="row">
+  <body>
+    <div id="body2">
+      <div class="container">
+        <div class="row"></div>
+        <div class="row"></div>
+
+        <div class="row">
+          <h2 id="workouttype">Workout type</h2>
+        </div>
+        <div id="row1" class="row">
+          <div
+            class="btn-group"
+            data-toggle="buttons"
+            role="group"
+            aria-label="Basic radio toggle button group"
+          >
+            <div class="col">
+              <input
+                type="radio"
+                v-model="store.workout_type"
+                class="btn-check"
+                value="Athome"
+                name="btnradio"
+                id="btnradio1"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-dark" for="btnradio1"
+                >At home</label
+              >
+            </div>
+            <div class="col">
+              <input
+                type="radio"
+                v-model="store.workout_type"
+                class="btn-check"
+                name="btnradio"
+                value="Ingym"
+                id="btnradio2"
+                autocomplete="off"
+                checked
+              />
+              <label class="btn btn-outline-dark" for="btnradio2">In-gym</label>
+            </div>
+
+            <div class="col"></div>
           </div>
 
-      <div class="row">
-          <h2 id="workouttype">  Workout type </h2>
-      </div>
-  <div id="row1" class="row">
-    
-     <div  class="btn-group"  data-toggle="buttons" role="group" aria-label="Basic radio toggle button group">
-         <div class="col">
-           
-  <input type="radio" v-model="store.workout_type" class="btn-check" value="Athome" name="btnradio" id="btnradio1" autocomplete="off" >
-  <label class="btn btn-outline-dark" for="btnradio1">At home</label>
-   </div>
-<div class="col">
-  <input type="radio" v-model="store.workout_type" class="btn-check" name="btnradio" value="Ingym" id="btnradio2" autocomplete="off" checked>
-  <label class="btn btn-outline-dark" for="btnradio2">In-gym</label>
-</div>
-
-    <div class="col">
-      
-    </div>
-     </div>
-   
-  
-   
-    <div class="col">
-      
-    </div>
-     
-  </div>
-   <div class="row">
-      <h2 id="workouttype">  Muscle groups </h2>  
-   </div>
- <div id="row3" class="row">
-      <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-          
+          <div class="col"></div>
+        </div>
+        <div class="row">
+          <h2 id="workouttype">Muscle groups</h2>
+        </div>
+        <div id="row3" class="row">
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Basic checkbox toggle button group"
+          >
             <div class="col">
-  <input type="checkbox" class="btn-check" v-model="store.muscle_groups" id="btncheck1" value="arms"  autocomplete="off" >
-  <label class="btn btn-outline-dark" for="btncheck1">Arms</label>
+              <input
+                type="checkbox"
+                class="btn-check"
+                v-model="store.muscle_groups"
+                id="btncheck1"
+                value="arms"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-dark" for="btncheck1">Arms</label>
             </div>
-              <div class="col">
-  <input type="checkbox" class="btn-check" v-model="store.muscle_groups" id="btncheck2" value="back"  autocomplete="off">
-  <label class="btn btn-outline-dark" for="btncheck2">Back</label>
-              </div>
-                <div class="col">
-  <input type="checkbox" class="btn-check" v-model="store.muscle_groups" id="btncheck3" value="abs"  autocomplete="off">
-  <label class="btn btn-outline-dark" for="btncheck3">Abs</label>
-  </div>
+            <div class="col">
+              <input
+                type="checkbox"
+                class="btn-check"
+                v-model="store.muscle_groups"
+                id="btncheck2"
+                value="back"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-dark" for="btncheck2">Back</label>
+            </div>
+            <div class="col">
+              <input
+                type="checkbox"
+                class="btn-check"
+                v-model="store.muscle_groups"
+                id="btncheck3"
+                value="abs"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-dark" for="btncheck3">Abs</label>
+            </div>
+          </div>
+        </div>
+        <div id="row4" class="row">
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Basic checkbox toggle button group"
+          >
+            <div class="col-sm">
+              <input
+                type="checkbox"
+                class="btn-check"
+                v-model="store.muscle_groups"
+                id="btncheck4"
+                value="legs"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-dark" for="btncheck4">Legs</label>
+            </div>
+            <div class="col">
+              <input
+                type="checkbox"
+                class="btn-check"
+                v-model="store.muscle_groups"
+                id="btncheck5"
+                value="chest"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-dark" for="btncheck5">Chest</label>
+            </div>
+            <div class="col"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <h2 id="workouttype">Dificulty</h2>
+        </div>
+        <div id="row5" class="row">
+          <div
+            class="btn-group"
+            data-toggle="buttons"
+            role="group"
+            aria-label="Basic radio toggle button group"
+          >
+            <div class="col">
+              <input
+                type="radio"
+                class="btn-check"
+                name="btnradio2"
+                id="btnradio5"
+                value="Beginner"
+                v-model="store.workout_dificulty"
+                autocomplete="off"
+                checked
+              />
+              <label class="btn btn-outline-dark" for="btnradio5"
+                >Beginner</label
+              >
+            </div>
+            <div class="col">
+              <input
+                type="radio"
+                class="btn-check"
+                name="btnradio2"
+                id="btnradio6"
+                value="Intermidiate"
+                v-model="store.workout_dificulty"
+                autocomplete="on"
+              />
+              <label class="btn btn-outline-dark" for="btnradio6"
+                >Intermidiate</label
+              >
+            </div>
+            <div class="col">
+              <input
+                type="radio"
+                class="btn-check"
+                name="btnradio2"
+                id="btnradio7"
+                value="Advanced"
+                v-model="store.workout_dificulty"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-dark" for="btnradio7"
+                >Advanced</label
+              >
+            </div>
+          </div>
+        </div>
+        <div id="row6" class="row">
+          <div class="col"></div>
+          <div class="col">
+            <router-link to="workoutresult" v-on:click.native="build_workout()">
+              <button type="button" class="btn btn-danger btn-lg">
+                Create workout
+              </button>
+            </router-link>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
     </div>
-     </div>
-                <div id="row4" class="row">
-                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                    <div class="col-sm">
-  <input type="checkbox" class="btn-check" v-model="store.muscle_groups" id="btncheck4" value="legs"  autocomplete="off">
-  <label class="btn btn-outline-dark" for="btncheck4">Legs</label>
-            </div>
-              <div class="col">
-  <input type="checkbox" class="btn-check" v-model="store.muscle_groups" id="btncheck5" value="chest" autocomplete="off">
-  <label class="btn btn-outline-dark" for="btncheck5">Chest</label>
-              </div>  
-              <div class="col">
-              </div>
-                </div>
-              
-                
-               
-</div>
-  
- 
-  <div class="row">
-      <h2 id="workouttype">  Dificulty </h2>  
-   </div>
-   <div id="row5" class="row">
-       <div class="btn-group" data-toggle="buttons" role="group" aria-label="Basic radio toggle button group">
-           <div class="col">
-  <input type="radio" class="btn-check" name="btnradio2" id="btnradio5" value="Beginner" v-model="store.workout_dificulty" autocomplete="off" checked>
-  <label class="btn btn-outline-dark" for="btnradio5">Beginner</label>
-           </div>
-<div class="col">
-  <input type="radio" class="btn-check" name="btnradio2" id="btnradio6" value="Intermidiate" v-model="store.workout_dificulty" autocomplete="on">
-  <label class="btn btn-outline-dark" for="btnradio6">Intermidiate</label>
-</div>
-<div class="col">
-  <input type="radio" class="btn-check" name="btnradio2" id="btnradio7" value="Advanced" v-model="store.workout_dificulty" autocomplete="off">
-  <label class="btn btn-outline-dark" for="btnradio7">Advanced</label>
-</div>
-</div>
-  </div>
-  <div id='row6' class="row">
-      <div class="col">
-          
-      </div>
-      <div class="col">
-          <router-link to="workoutresult" v-on:click.native="build_workout()">
-          <button type="button" class="btn btn-danger btn-lg">Create workout</button>
-          </router-link>
-      </div>
-      <div class="col">
-          
-      </div>
-   </div>
-</div>
-</div>
-</body>
+  </body>
 </template>
 <script>
 import store from "@/store";
+import { vjezbe } from '@/services';
 
 export default {
     name:"workoutbuilder",
-    data() {
+    data: function() {
     return{ 
-      store
-      };
+      store,
+      vjezba: []
+      }
        
+    },
+
+   mounted() {
+    this.build_workout();
   },
     
     
  methods: {
-   build_workout(){
+
+async build_workout() {
+    this.vjezba = []
+    this.vjezba = await vjezbe.build_workout()
+  },
+
+   build_workout2(){
     
 
 
@@ -132,6 +228,8 @@ export default {
 
 if(this.store.muscle_groups.includes("arms",[0]))
 {
+
+  /*
   fetch(`http://localhost:3000/arms/${this.store.workout_type}/${this.store.workout_dificulty}`)
  .then(response => {
  return response.json()
@@ -150,7 +248,6 @@ if(this.store.muscle_groups.includes("arms",[0]))
  
 console.log("arms")
    }
-
 
   
  if(this.store.muscle_groups.includes("back",[0]))
@@ -211,54 +308,51 @@ console.log("legs")
 console.log("chest")
    }
 
-
+*/
 
 
 
  },
 
- }
+ },
+ },
 }
 
 
 </script>
 <style  scoped>
-#workouttype{
-text-align: left;
-color: white;
-margin-top: 3%;
-margin-bottom: 3%;
+#workouttype {
+  text-align: left;
+  color: white;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
-#body2{
-background-color:#5E5E5E ;
+#body2 {
+  background-color: #5e5e5e;
 }
-#row1{
-    margin-left: -14%;
-    
+#row1 {
+  margin-left: -14%;
 }
-#row2{
-    margin-left: -13%;
-    
+#row2 {
+  margin-left: -13%;
 }
-#row3{
-    margin-left: -16%;
-    margin-top: 1%;
-margin-bottom: 4%;
+#row3 {
+  margin-left: -16%;
+  margin-top: 1%;
+  margin-bottom: 4%;
 }
-#row4{
-margin-left: -16%;
-margin-bottom: 1%;
+#row4 {
+  margin-left: -16%;
+  margin-bottom: 1%;
 }
-#row5{
-margin-left: -14.5%;
-margin-bottom: 7%;
- 
+#row5 {
+  margin-left: -14.5%;
+  margin-bottom: 7%;
 }
-#row6{
-   margin-bottom: 4%; 
+#row6 {
+  margin-bottom: 4%;
 }
-#btn{
-    color: white;
+#btn {
+  color: white;
 }
-
 </style>

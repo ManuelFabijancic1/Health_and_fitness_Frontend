@@ -44,7 +44,7 @@
                     </div>
                     </div>
                  </div>
-                
+                 <getAll v-for="vjezba in vjezbe" :key="vjezba.id" :info="vjezba"/>  
                      <div class="col">
                          <div id="vjezbe" class="card" style="width: 18rem;">
                           <img src="@/assets/Crunches.png" class="card-img-top" alt="...">
@@ -58,23 +58,38 @@
                         <div class="col">
                            
                          </div>
+                         
              </div>
 </div>
 </template>
 
 <script>
 import store from "@/store";
+import { vjezbe } from '@/services';
+import getAll from '@/components/getAll.vue'
 
 export default {
-    name:"workoutresult",
-     data() {
-    return{ 
-      store
-      };
-       
+  name: 'workout results',  
+    components: {
+    getAll
   },
-    }
+  data: function () {
 
+    return  {
+      vjezba: []
+    }
+  },
+  mounted() {
+    this.build_workout();
+  },
+  methods: {
+  async build_workout() {
+    this.vjezba = []
+    this.vjezba = await vjezbe.build_workout()
+    console.log(this.vjezba)
+  },
+},
+}
 </script>
 
 <style scoped>

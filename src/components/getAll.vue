@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row">
       <div class="col-2"></div>
-      <div class="col-4" id="lista">{{info.exercize_name}}</div>
-      <div class="col-4" id="lista">{{info.how_to_do_exercize}}</div>
-      <div class="col-4" id="lista">{{info.exercize_type}}</div>
-      <div class="col-4" id="lista">{{info.exerciye_dificulty}}</div>
+      <div class="col-4" id="lista">{{info.id}}</div>
+      <div class="col-4" id="lista">{{info.name1}}</div>
+      <div class="col-4" id="lista">{{info.howto}}</div>
+      <div class="col-4" id="lista">{{info.type}}</div>
       <div class="col-2"></div>
     </div>
   </div>

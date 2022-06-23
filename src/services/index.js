@@ -25,6 +25,30 @@ Service.interceptors.response.use((response) => response, (error) => {
     }
 })
 
+let vjezbe = {
+    addNewInput(vjezba) {
+        return Service.post("/vjezbe", vjezba)
+    },
+    async build_workout() {
+        let response = await Service.get('/arms')
+        let data = response.data
+        data = data.map(element => {
+        return {
+            id: element.id,
+            name1: element.exercize_name,
+            howto: element.how_to_do_exercize,
+            type: element.exercize_type, 
+            dificulty: element.exerciye_dificulty}
+        
+        })
+       ``
+           console.log("Podaci s backenda", data )
+        },
+       
+}
+
+
+
 let Auth = {
     async login (username, password){
 
@@ -81,4 +105,4 @@ let Auth = {
     },
 }
 
-export { Service, Auth }
+export { Service, Auth, vjezbe }
