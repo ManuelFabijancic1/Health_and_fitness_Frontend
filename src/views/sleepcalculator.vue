@@ -8,14 +8,14 @@
   </div>
     <div id='row2' class="row">
          <div class="col"><div>
-         <input type="number" min="0" max="23" placeholder="7" v-model="variables.wakeuphours" >:
-         <input type="number" min="0" max="59" placeholder="00" v-model="variables.wakeupmins">
+         <input type="number" min="0" max="23" placeholder="7"  v-model="store.wakeuphours" >
+         <input type="number" min="0" max="59" placeholder="00" v-model="store.wakeupmins">
          </div>
          </div>
          <div class="col"></div>
          <div class="col"><div>
-         <input type="number" min="0" max="23" placeholder="22" v-model="variables.gotosleephours">:
-         <input type="number" min="0" max="59" placeholder="00" v-model="variables.gotosleepmins">
+         <input type="number" min="0" max="23" placeholder="22" v-model="store.gotosleephours">:
+         <input type="number" min="0" max="59" placeholder="00" v-model="store.gotosleepmins">
          </div></div>
     </div>
       <div id='row3' class="row">
@@ -28,13 +28,13 @@
 </template>
 
 <script>
-import variables from '@/variables.js'
+import store from '@/store.js'
 
 export default {
     name:"sleepcalculator",
     data() {
     return{ 
-      variables,
+      store,
       
       
       
@@ -43,107 +43,109 @@ export default {
 
 methods: {
   wake_up_time_calculation(){
+    console.log
     //prvi interval
-    this.variables.interval1_hours=Number(variables.gotosleephours)+6
-    if(this.variables.interval1_hours>24){
-      this.variables.interval1_hours=this.variables.interval1_hours-24
+    this.store.interval1_hours=Number(this.store.gotosleephours)+6
+    if(this.store.interval1_hours>24){
+      this.store.interval1_hours=this.store.interval1_hours-24
     }
-    this.variables.interval1_mins=this.variables.gotosleepmins
+    this.store.interval1_mins=this.store.gotosleepmins
   
 //drugi interval
-  if( Number(this.variables.interval1_mins)+30>59){
-    this.variables.interval2_hours=Number(this.variables.interval1_hours)+2
-    this.variables.interval2_mins=Number(this.variables.interval1_mins)+30
-    this.variables.interval2_mins=this.variables.interval2_mins%60
+  if( Number(this.store.interval1_mins)+30>59){
+    this.store.interval2_hours=Number(this.store.interval1_hours)+2
+    this.store.interval2_mins=Number(this.store.interval1_mins)+30
+    this.store.interval2_mins=this.store.interval2_mins%60
   }
   else{
-    this.variables.interval2_hours=Number(this.variables.interval1_hours)+1
-    this.variables.interval2_mins=Number(this.variables.interval1_mins)+30
+    this.store.interval2_hours=Number(this.store.interval1_hours)+1
+    this.store.interval2_mins=Number(this.store.interval1_mins)+30
     //treci interval
   }
-  if( Number(this.variables.interval2_mins)+30>59){
-    this.variables.interval3_hours=Number(this.variables.interval2_hours)+2
-    this.variables.interval3_mins=Number(this.variables.interval2_mins)+30
-    this.variables.interval3_mins=this.variables.interval3_mins%60
+  if( Number(this.store.interval2_mins)+30>59){
+    this.store.interval3_hours=Number(this.store.interval2_hours)+2
+    this.store.interval3_mins=Number(this.store.interval2_mins)+30
+    this.store.interval3_mins=this.store.interval3_mins%60
   }
   else{
-    this.variables.interval3_hours=Number(this.variables.interval2_hours)+1
-    this.variables.interval3_mins=Number(this.variables.interval2_mins)+30
+    this.store.interval3_hours=Number(this.store.interval2_hours)+1
+    this.store.interval3_mins=Number(this.store.interval2_mins)+30
   }
 
   //cetvrti interval
-    if( Number(this.variables.interval3_mins)+30>59){
-    this.variables.interval4_hours=Number(this.variables.interval3_hours)+2
-    this.variables.interval4_mins=Number(this.variables.interval3_mins)+30
-    this.variables.interval4_mins=this.variables.interval4_mins%60
+    if( Number(this.store.interval3_mins)+30>59){
+    this.store.interval4_hours=Number(this.store.interval3_hours)+2
+    this.store.interval4_mins=Number(this.store.interval3_mins)+30
+    this.store.interval4_mins=this.store.interval4_mins%60
   }
   else{
-    this.variables.interval4_hours=Number(this.variables.interval3_hours)+1
-    this.variables.interval4_mins=Number(this.variables.interval3_mins)+30
+    this.store.interval4_hours=Number(this.store.interval3_hours)+1
+    this.store.interval4_mins=Number(this.store.interval3_mins)+30
   }
+
 
   },
 
 
 bedtime_calculator(){
  //prvi interval
-if(Number(variables.wakeuphours)-9<0){
-  this.variables.bedtimeinterval1_hours=24-(9-Number(variables.wakeuphours))
-   this.variables.bedtimeinterval2_hours=Number(this.variables.bedtimeinterval2_hours)-24
-  this.variables.bedtimeinterval1_mins=variables.wakeupmins
+if(Number(store.wakeuphours)-9<0){
+  this.store.bedtimeinterval1_hours=24-(9-Number(this.store.wakeuphours))
+   this.store.bedtimeinterval2_hours=Number(this.store.bedtimeinterval2_hours)-24
+  this.store.bedtimeinterval1_mins=this.store.wakeupmins
 }
 else{
-  this.variables.bedtimeinterval1_hours=Number(variables.wakeuphours)-9
-   this.variables.bedtimeinterval1_mins=variables.wakeupmins
+  this.store.bedtimeinterval1_hours=Number(store.wakeuphours)-9
+   this.store.bedtimeinterval1_mins=store.wakeupmins
 }
 //drugi interval
 
-if( Number(this.variables.bedtimeinterval1_mins)+30>59){
+if( Number(this.store.bedtimeinterval1_mins)+30>59){
   
-this.variables.bedtimeinterval2_hours=Number(this.variables.bedtimeinterval1_hours)+2
-if(this.variables.bedtimeinterval2_hours>=24)
+this.store.bedtimeinterval2_hours=Number(this.store.bedtimeinterval1_hours)+2
+if(this.store.bedtimeinterval2_hours>=24)
 {
-  this.variables.bedtimeinterval2_hours=Number(this.variables.bedtimeinterval2_hours)-24
+  this.store.bedtimeinterval2_hours=Number(this.store.bedtimeinterval2_hours)-24
 }
-    this.variables.bedtimeinterval2_mins=Number(this.variables.bedtimeinterval1_mins)+30
-    this.variables.bedtimeinterval2_mins=this.variables.bedtimeinterval2_mins%60
+    this.store.bedtimeinterval2_mins=Number(this.store.bedtimeinterval1_mins)+30
+    this.store.bedtimeinterval2_mins=this.store.bedtimeinterval2_mins%60
 }
 else{
-  this.variables.bedtimeinterval2_hours=Number(this.variables.bedtimeinterval1_hours)+1
-    this.variables.bedtimeinterval2_mins=Number(this.variables.bedtimeinterval1_mins)+30
+  this.store.bedtimeinterval2_hours=Number(this.store.bedtimeinterval1_hours)+1
+    this.store.bedtimeinterval2_mins=Number(this.store.bedtimeinterval1_mins)+30
 }
 
 //treci interval
 
-if( Number(this.variables.bedtimeinterval2_mins)+30>59){
+if( Number(this.store.bedtimeinterval2_mins)+30>59){
   
-this.variables.bedtimeinterval3_hours=Number(this.variables.bedtimeinterval2_hours)+2
-if(this.variables.bedtimeinterval3_hours>=24)
+this.store.bedtimeinterval3_hours=Number(this.store.bedtimeinterval2_hours)+2
+if(this.store.bedtimeinterval3_hours>=24)
 {
-  this.variables.bedtimeinterval3_hours=Number(this.variables.bedtimeinterval3_hours)-24
+  this.store.bedtimeinterval3_hours=Number(this.store.bedtimeinterval3_hours)-24
 }
-    this.variables.bedtimeinterval3_mins=Number(this.variables.bedtimeinterval2_mins)+30
-    this.variables.bedtimeinterval3_mins=this.variables.bedtimeinterval3_mins%60
+    this.store.bedtimeinterval3_mins=Number(this.store.bedtimeinterval2_mins)+30
+    this.store.bedtimeinterval3_mins=this.store.bedtimeinterval3_mins%60
 }
 else{
-  this.variables.bedtimeinterval3_hours=Number(this.variables.bedtimeinterval2_hours)+1
-    this.variables.bedtimeinterval3_mins=Number(this.variables.bedtimeinterval2_mins)+30
+  this.store.bedtimeinterval3_hours=Number(this.store.bedtimeinterval2_hours)+1
+    this.store.bedtimeinterval3_mins=Number(this.store.bedtimeinterval2_mins)+30
 }
 //cetvrti interval
 
-if( Number(this.variables.bedtimeinterval3_mins)+30>59){
+if( Number(this.store.bedtimeinterval3_mins)+30>59){
   
-this.variables.bedtimeinterval4_hours=Number(this.variables.bedtimeinterval3_hours)+2
-if(this.variables.bedtimeinterval4_hours>=24)
+this.store.bedtimeinterval4_hours=Number(this.store.bedtimeinterval3_hours)+2
+if(this.store.bedtimeinterval4_hours>=24)
 {
-  this.variables.bedtimeinterval4_hours=Number(this.variables.bedtimeinterval4_hours)-24
+  this.store.bedtimeinterval4_hours=Number(this.store.bedtimeinterval4_hours)-24
 }
-    this.variables.bedtimeinterval4_mins=Number(this.variables.bedtimeinterval3_mins)+30
-    this.variables.bedtimeinterval4_mins=this.variables.bedtimeinterval4_mins%60
+    this.store.bedtimeinterval4_mins=Number(this.store.bedtimeinterval3_mins)+30
+    this.store.bedtimeinterval4_mins=this.store.bedtimeinterval4_mins%60
 }
 else{
-  this.variables.bedtimeinterval4_hours=Number(this.variables.bedtimeinterval3_hours)+1
-    this.variables.bedtimeinterval4_mins=Number(this.variables.bedtimeinterval3_mins)+30
+  this.store.bedtimeinterval4_hours=Number(this.store.bedtimeinterval3_hours)+1
+    this.store.bedtimeinterval4_mins=Number(this.store.bedtimeinterval3_mins)+30
 }
 
 }

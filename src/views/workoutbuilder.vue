@@ -129,6 +129,7 @@ export default {
 
 this.store.exercize_name1 = []
 this.store.how_to_do_exercize1 = []
+this.store.slika_source = []
 
 if(this.store.muscle_groups.includes("arms",[0]))
 {
@@ -137,10 +138,11 @@ if(this.store.muscle_groups.includes("arms",[0]))
  return response.json()
  })
  .then(data => {
- console.log("Podaci s backenda", data)
+ 
+ 
  this.store.map1 = data.map(doc => {
 
- return {id: doc.id, name1: doc.exercize_name, howto: doc.how_to_do_exercize, type:doc.exercize_type, dificulty: doc.exerciye_dificulty}
+ return {id: doc.id, name1: doc.exercize_name, howto: doc.how_to_do_exercize, type:doc.exercize_type, dificulty: doc.exerciye_dificulty, src1:doc.src}
  
  })
  
@@ -148,13 +150,15 @@ if(this.store.muscle_groups.includes("arms",[0]))
 
 this.store.map1.forEach(item => this.store.exercize_name1.push({[item.name1]: item.name1}));
 this.store.map1.forEach(item => this.store.how_to_do_exercize1.push({[item.howto]: item.howto}));
+this.store.map1.forEach(item => this.store.slika_source.push({[item.src1]: item.src1}));
 
 
 
 
 
 
-    console.log("Podaci s backenda",this.store.exercize_name1[1],this.store.how_to_do_exercize1 )
+    
+    
  })
 
 
@@ -171,10 +175,11 @@ console.log("arms")
  return Response.json()
  })
  .then(data => {
- console.log("Podaci s backenda", data)
+
+
  this.store.map1 = data.map(doc => {
 
- return {id: doc.id, name1: doc.exercize_name, howto: doc.how_to_do_exercize, type:doc.exercize_type, dificulty: doc.exerciye_dificulty}
+ return {id: doc.id, name1: doc.exercize_name, howto: doc.how_to_do_exercize, type:doc.exercize_type, dificulty: doc.exerciye_dificulty, src1:doc.src}
  
  })
  
@@ -182,9 +187,10 @@ console.log("arms")
 
 this.store.map1.forEach(item => this.store.exercize_name1.push({[item.name1]: item.name1}));
 this.store.map1.forEach(item => this.store.how_to_do_exercize1.push({[item.howto]: item.howto}));
+this.store.map1.forEach(item => this.store.slika_source.push({[item.src1]: item.src1}));
 
 
- console.log("Podaci s backenda", data)
+
  })
 
 console.log("back")
@@ -202,7 +208,7 @@ if(this.store.muscle_groups.includes("abs",[0]))
  console.log("Podaci s backenda", data)
  this.store.map1 = data.map(doc => {
 
- return {id: doc.id, name1: doc.exercize_name, howto: doc.how_to_do_exercize, type:doc.exercize_type, dificulty: doc.exerciye_dificulty}
+ return {id: doc.id, name1: doc.exercize_name, howto: doc.how_to_do_exercize, type:doc.exercize_type, dificulty: doc.exerciye_dificulty, src1: doc.src}
  
  })
  
@@ -210,9 +216,10 @@ if(this.store.muscle_groups.includes("abs",[0]))
 
 this.store.map1.forEach(item => this.store.exercize_name1.push({[item.name1]: item.name1}));
 this.store.map1.forEach(item => this.store.how_to_do_exercize1.push({[item.howto]: item.howto}));
+this.store.map1.forEach(item => this.store.slika_source.push({[item.src1]: item.src1}));
 
 
- console.log("Podaci s backenda", data)
+
  })
 
 console.log("abs")
@@ -231,7 +238,7 @@ console.log("abs")
  console.log("Podaci s backenda", data)
  this.store.map1 = data.map(doc => {
 
- return {id: doc.id, name1: doc.exercize_name, howto: doc.how_to_do_exercize, type:doc.exercize_type, dificulty: doc.exerciye_dificulty}
+ return {id: doc.id, name1: doc.exercize_name, howto: doc.how_to_do_exercize, type:doc.exercize_type, dificulty: doc.exerciye_dificulty, src1:doc.src}
  
  })
  
@@ -239,12 +246,14 @@ console.log("abs")
 
 this.store.map1.forEach(item => this.store.exercize_name1.push({[item.name1]: item.name1}));
 this.store.map1.forEach(item => this.store.how_to_do_exercize1.push({[item.howto]: item.howto}));
+this.store.map1.forEach(item => this.store.slika_source.push({[item.src1]: item.src1}));
 
 
- console.log("Podaci s backenda", data)
+
  })
 
-console.log("legs")
+
+
    }
 
 
@@ -258,7 +267,7 @@ console.log("legs")
  console.log("Podaci s backenda", data)
  this.store.map1 = data.map(doc => {
 
- return {id: doc.id, name1: doc.exercize_name, howto: doc.how_to_do_exercize, type:doc.exercize_type, dificulty: doc.exerciye_dificulty}
+ return {id: doc.id, name1: doc.exercize_name, howto: doc.how_to_do_exercize, type:doc.exercize_type, dificulty: doc.exerciye_dificulty, src1:doc.src}
  
  })
  
@@ -266,12 +275,13 @@ console.log("legs")
 
 this.store.map1.forEach(item => this.store.exercize_name1.push({[item.name1]: item.name1}));
 this.store.map1.forEach(item => this.store.how_to_do_exercize1.push({[item.howto]: item.howto}));
+this.store.map1.forEach(item => this.store.slika_source.push({[item.src1]: item.src1}));
 
 
- console.log("Podaci s backenda",this.store.exercize_name1,this.store.how_to_do_exercize1 )
+
  })
 
-console.log("chest")
+
    }
 
 

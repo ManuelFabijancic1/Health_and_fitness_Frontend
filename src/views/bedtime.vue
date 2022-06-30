@@ -9,16 +9,16 @@
   </div>
          <div id="row2" class="row">
              <div class="col">
-               <h1><span class="badge bg-secondary"> {{this.variables.bedtimeinterval1_hours}}:{{this.variables.bedtimeinterval1_mins}}</span></h1>
+               <h1><span class="badge bg-secondary"> {{store.bedtimeinterval1_hours}}:{{store.bedtimeinterval1_mins}}</span></h1>
              </div>
              <div class="col">
-                  <h1><span class="badge bg-secondary">{{this.variables.bedtimeinterval2_hours}}:{{this.variables.bedtimeinterval2_mins}}</span></h1>
+                  <h1><span class="badge bg-secondary">{{store.bedtimeinterval2_hours}}:{{store.bedtimeinterval2_mins}}</span></h1>
              </div>
              <div class="col">
-                  <h1><span class="badge bg-secondary">{{this.variables.bedtimeinterval3_hours}}:{{this.variables.bedtimeinterval3_mins}}</span></h1>
+                  <h1><span class="badge bg-secondary">{{store.bedtimeinterval3_hours}}:{{store.bedtimeinterval3_mins}}</span></h1>
              </div>
               <div class="col">
-                   <h1><span class="badge bg-secondary">{{this.variables.bedtimeinterval4_hours}}:{{this.variables.bedtimeinterval4_mins}}</span></h1>
+                   <h1><span class="badge bg-secondary">{{store.bedtimeinterval4_hours}}:{{store.bedtimeinterval4_mins}}</span></h1>
               </div>
           </div>
            <div id="row3" class="row">
@@ -34,13 +34,13 @@
 </template>
 <script>
 
-import variables from '@/variables.js'
+import store from '@/store.js'
 
 export default {
   
     data() {
     return{ 
-      variables,
+      store,
       
       };
     }, 

@@ -9,16 +9,16 @@
   </div>
          <div id="row2" class="row">
              <div class="col">
-               <h1><span class="badge bg-secondary">{{this.variables.interval1_hours}}:{{this.variables.interval1_mins}} </span></h1>
+               <h1><span class="badge bg-secondary">{{store.interval1_hours}}:{{store.interval1_mins}} </span></h1>
              </div>
              <div class="col">
-                  <h1><span class="badge bg-secondary">{{ this.variables.interval2_hours}}:{{this.variables.interval2_mins}} </span></h1>
+                  <h1><span class="badge bg-secondary">{{ store.interval2_hours}}:{{store.interval2_mins}} </span></h1>
              </div>
              <div class="col">
-                  <h1><span class="badge bg-secondary">{{this.variables.interval3_hours}}:{{this.variables.interval3_mins}} </span></h1>
+                  <h1><span class="badge bg-secondary">{{store.interval3_hours}}:{{store.interval3_mins}} </span></h1>
              </div>
               <div class="col">
-                   <h1><span class="badge bg-secondary">{{this.variables.interval4_hours}}:{{this.variables.interval4_mins}} </span></h1>
+                   <h1><span class="badge bg-secondary">{{store.interval4_hours}}:{{store.interval4_mins}} </span></h1>
               </div>
           </div>
            <div id="row3" class="row">
@@ -35,13 +35,13 @@
 
 <script>
 
-import variables from '@/variables.js'
+import store from '@/store.js'
 
 export default {
   
     data() {
     return{ 
-      variables,
+      store,
       
       };
     }, 
