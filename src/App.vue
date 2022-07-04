@@ -6,25 +6,27 @@
                height="60"
                /></router-link >
 
-<div class="nav-item">
+  <div class="nav-item">
           <div v-if="!store.currentUser" class="links">
             <div class="row">
               
-            <router-link to="/login"> <button type="button" class="btn btn-primary">login</button></router-link>
-            
+            <router-link to="/login"> <button type="button" class="btn btn-dark">login</button></router-link>
+            <span class="razmak"><a>-----</a>
+            </span>
+            <router-link to="/signup"> <button type="button" class="btn btn-dark">signup</button></router-link>
+            </div>
             
           </div>
           <div v-if="store.currentUser" class="links">
             <div class="row">
-               
-            <span class="razmak">
-            <p>_</p></span>
-              <a href="#" @click.prevent="logout()" class="nav-link"><button type="button" class="btn btn-primary">logout</button></a>
+               <router-link to="/workoutmenager"> <button type="button" class="btn btn-dark">WORKOUT MENAGER</button></router-link>
+            <span class="razmak"><a>----</a>
+           </span>
+              <a href="#" @click.prevent="logout()" class="nav-link"><button type="button" class="btn btn-dark">logout</button></a>
             
             </div>
           </div>
         </div>
-  </div>
 </nav>
 <body>
 </body>

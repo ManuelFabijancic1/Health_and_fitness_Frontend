@@ -314,9 +314,9 @@
                          </div>
  </div>
 </div>
-<div id="savebuild" class="col-sm">
+<div id="savebuild" v-if="store.currentUser"   class="col-sm">
         <router-link to="" v-on:click.native="savebuild()">
-          <button type="button" class="btn btn-primary btn-lg">
+          <button type="button" class="btn btn-dark">
             Save workout
           </button></router-link>
         
@@ -341,6 +341,10 @@
 <script>
 import store from "@/store";
 import { db } from "@/firebase";
+
+
+
+
 export default {
     name:"workoutresult",
      data() {
@@ -349,30 +353,60 @@ export default {
       };
        
   },
-  methods: {
-    savebuild() {
-      
+ methods:{
+   savebuild(){
+     
+      if(this.store.brojac==1 || this.store.brojac==2){
+        this.store.brojac=0
       db.collection("users").doc(String(store.currentUser)).set({
         id: String(store.currentUser),
         name: store.exercize_name1,
         
-        desc: store.how_to_do_exercize1
+        desc: store.how_to_do_exercize1,
+        url0: String(Object.values( this.store.slika_source[0]||undefined)),
+        url1: String(Object.values( this.store.slika_source[1]||undefined)),
+         url2: String(Object.values( this.store.slika_source[2]||undefined)),
+          url3: String(Object.values( this.store.slika_source[3]||undefined)),
+           url4: String(Object.values( this.store.slika_source[4]||0)),
+            url5: String(Object.values( this.store.slika_source[5]||0)),
+             url6: String(Object.values( this.store.slika_source[6]||0)),
+              url7: String(Object.values( this.store.slika_source[7]||0)),
+               url8: String(Object.values( this.store.slika_source[8]||0)),
+                url9: String(Object.values( this.store.slika_source[9]||0)),
+                 url10: String(Object.values( this.store.slika_source[10]||0)),
+                  url11: String(Object.values( this.store.slika_source[11]||0)),
+                   url12: String(Object.values( this.store.slika_source[12]||0)),
+                    url13: String(Object.values( this.store.slika_source[13]||0)),
+                     url14: String(Object.values( this.store.slika_source[14]||0)),
+                      url15: String(Object.values( this.store.slika_source[15]||0)),
+                       url16: String(Object.values( this.store.slika_source[16]||0)),
+                        url17: String(Object.values( this.store.slika_source[17]||0)),
+                         url18: String(Object.values( this.store.slika_source[18]||0)),
+                          url19: String(Object.values( this.store.slika_source[19]||0)),
+                           url20: String(Object.values( this.store.slika_source[20]||0)),
+                            url21: String(Object.values( this.store.slika_source[21]||0)),
+                             url22: String(Object.values( this.store.slika_source[22]||0)),
+                              url23: String(Object.values( this.store.slika_source[23]||0)),
+                               url24: String(Object.values( this.store.slika_source[24]||0))
+        
         
       });
+      alert("Workout saved")
       console.log("it's happening!");
-    },
-
-
-  created(){
- 
- let i=0;
- while(i<25){
-
-i++
- }
-  }
+      }
+      else{
+      
+      alert("Workout already saved!!!")
+      }
+     
     }
-  }
+  
+  
+
+ }
+ 
+    }
+  
 </script>
 
 <style scoped>
@@ -385,5 +419,9 @@ margin-top: 7%;
 }
 #col{
   margin-left: 7%;
+}
+#savebuild{
+margin-top: 5%;
+margin-bottom: 7%;
 }
 </style>

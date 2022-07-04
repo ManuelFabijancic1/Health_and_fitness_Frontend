@@ -48,6 +48,32 @@ export default {
     totalcalories:"",
 
     nameuser:[],
-    descuser:[]
+    descuser:[],
+    url_slika_firebase1:[],
+    url_slika_firebase2:[],
+    url_slika_firebase3:[],
+    url_slika_firebase4:[],
+    url_slika_firebase5:[],
+    url_slika_firebase6:[],
+    url_slika_firebase7:[],
+    url_slika_firebase8:[],
+    url_slika_firebase9:[],
+    url_slika_firebase10:[],
+    url_slika_firebase11:[],
+    url_slika_firebase12:[],
+    url_slika_firebase13:[],
+    url_slika_firebase14:[],
+    url_slika_firebase15:[],
+    url_slika_firebase16:[],
+    url_slika_firebase17:[],
+    url_slika_firebase18:[],
+    url_slika_firebase19:[],
+    url_slika_firebase20:[],
+    url_slika_firebase21:[],
+    url_slika_firebase22:[],
+    url_slika_firebase23:[],
+    url_slika_firebase24:[],
+    url_slika_firebase25:[],
+    brojac:1
     }
 

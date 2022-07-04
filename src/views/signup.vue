@@ -46,7 +46,7 @@
               placeholder="Password"
             />
           </div>
-          <button id="subbut" type="button" @click="signup()" class="btn btn-primary">
+          <button id="subbut" type="button" @click="signup()" class="btn btn-dark">
             Submit
           </button>
         </form>
@@ -95,6 +95,7 @@ export default {
 </script>
 <style>
 #subbut{
-  margin-bottom: 570px;
+
+  margin-top: 7%;
 }
 </style>

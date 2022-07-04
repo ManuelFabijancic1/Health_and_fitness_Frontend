@@ -26,7 +26,7 @@
               />
             </div>
             
-            <button type="button" @click="login()" class="btn btn-primary">
+            <button id="loginbutton" type="button" @click="login()" class="btn btn-dark">
               Log in
             </button>
           </form>
@@ -86,5 +86,8 @@ export default {
 <style>
 #signupbut{
 margin-bottom: 850px;
+}
+#loginbutton{
+margin-top: 7%;
 }
 </style>

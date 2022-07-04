@@ -78,8 +78,8 @@ top: 0;
   height: 250px;
   width: 600px;
   background-color: #2D0505;
-  z-index: 99999;
-  margin-top: 165%;
+  z-index: 99;
+  margin-top: 100%;
   margin-bottom: 5%;
     border-radius: 25px;
     margin-left: -17%;
@@ -89,7 +89,7 @@ top: 0;
     border-radius: 25px;
 }
 #calorieintake{
-  margin-top: 165%;
+  margin-top: 100%;
   margin-bottom: 5%;
     height: 250px;
       width: 600px;

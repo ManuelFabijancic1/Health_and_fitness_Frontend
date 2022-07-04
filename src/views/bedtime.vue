@@ -24,7 +24,7 @@
            <div id="row3" class="row">
                <div class="col"></div>
           
-               <div class="col"><router-link to="/"> <button class="btn btn-primary" type="button">Go back</button>
+               <div class="col"><router-link to="/"> <button class="btn btn-dark" type="button">Go back</button>
                </router-link>
                </div>
                <div class="col"></div>

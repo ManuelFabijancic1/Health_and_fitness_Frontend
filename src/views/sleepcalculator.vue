@@ -19,9 +19,9 @@
          </div></div>
     </div>
       <div id='row3' class="row">
-         <div class="col"><router-link to="bedtime"  v-on:click.native="bedtime_calculator()"><button class="btn btn-primary" type="button">Calculate bedtime</button></router-link></div>
+         <div class="col"><router-link to="bedtime"  v-on:click.native="bedtime_calculator()"><button class="btn btn-dark" type="button">Calculate bedtime</button></router-link></div>
          <div class="col"></div>
-         <div class="col"><router-link to="wakeuptime" v-on:click.native="wake_up_time_calculation()"><button class="btn btn-primary" type="button">Calculate wake-up time</button></router-link></div>
+         <div class="col"><router-link to="wakeuptime" v-on:click.native="wake_up_time_calculation()"><button class="btn btn-dark" type="button">Calculate wake-up time</button></router-link></div>
          
       </div>
 </div>
