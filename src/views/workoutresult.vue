@@ -354,7 +354,9 @@ export default {
       
       db.collection("users").doc(String(store.currentUser)).set({
         id: String(store.currentUser),
-        name: String(this.store.workout_type)
+        name: store.exercize_name1,
+        
+        desc: store.how_to_do_exercize1
         
       });
       console.log("it's happening!");
