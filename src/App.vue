@@ -6,10 +6,25 @@
                height="60"
                /></router-link >
 
-<div id="Login_button">
-  <button type="button" class="btn btn-primary">Login</button>
-</div>
-  
+<div class="nav-item">
+          <div v-if="!store.currentUser" class="links">
+            <div class="row">
+              
+            <router-link to="/login"> <button type="button" class="btn btn-primary">login</button></router-link>
+            
+            
+          </div>
+          <div v-if="store.currentUser" class="links">
+            <div class="row">
+               
+            <span class="razmak">
+            <p>_</p></span>
+              <a href="#" @click.prevent="logout()" class="nav-link"><button type="button" class="btn btn-primary">logout</button></a>
+            
+            </div>
+          </div>
+        </div>
+  </div>
 </nav>
 <body>
 </body>
@@ -18,20 +33,40 @@
 </template>
 
 <script>
-import {Auth} from '@/services'
-export default{
+import store from "@/store";
+import { firebase } from "@/firebase";
+import router from "@/router";
+firebase.auth().onAuthStateChanged((user) => {
+  const currentRoute = router.currentRoute;
+  if (user) {
+    console.log("*** User", user.email);
+    store.currentUser = user.email;
+
+    if (!currentRoute.meta.needsUser) {
+      router.push({ name: "home" });
+    }
+  } else {
+    console.log("*** No user");
+    store.currentUser = null;
+    if (currentRoute.meta.needsUser) {
+      router.push({ name: "home" });
+    }
+  }
+});
+export default {
   data() {
-    return{
-      auth: Auth.state,
+    return {
+      store,
     };
   },
-  name: "App.vue",
-    components: {
-    },
-    methods: {
-      logout(){
-        Auth.logout();
-        this.$router.go();
+  methods: {
+    logout() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.push({ name: "login" });
+        });
     },
   },
 };
@@ -44,27 +79,24 @@ export default{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-background-color:#5E5E5E;
-
+  background-color: #5e5e5e;
 }
-html, 
+html,
 body {
-    margin: 0;
-    padding: 0;
-    background-color:#5E5E5E;
+  margin: 0;
+  padding: 0;
+  background-color: #5e5e5e;
 }
 
 #navibar {
   margin: 3%;
- z-index: 99999;
-
-
+  z-index: 99999;
 }
-#logo{
- margin-left: 7%;
+#logo {
+  margin-left: 7%;
 }
 
-#Login_button{
+#Login_button {
   margin-right: 1%;
 }
 </style>

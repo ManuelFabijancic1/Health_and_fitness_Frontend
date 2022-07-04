@@ -2,7 +2,8 @@
  <div class="container">
   <div class="row">
     <div class="col">
-    <h3 id="Naslov1">SELECT WORKOUT:</h3>
+
+    <h3 id="Naslov1"> <p>Username: {{ String(store.currentUser) }}</p></h3>
     </div>
     <div class="col">
     
@@ -16,7 +17,7 @@
   </div>
  <div id="row2" class="row">
     <div class="col">
-  <router-link to="workouttracker">
+  <router-link to=""  v-on:click.native="showworkout()">
   <div id="workoutplan" class="card" style="width: 18rem;">
   <img src="@/assets/workoutplanpicature.png" class="card-img-top" alt="...">
   <div class="card-body">
@@ -29,19 +30,45 @@
     
     </div>
     <div class="col">
-    
+    <div class="displaycomponents">
+                <p> {{store.workout_type}} </p>
+                
+              </div>
     </div>
  
  </div>
 </div>
 </template>
 <script>
-
+import store from "@/store";
+import { db } from "@/firebase";
 
 export default {
     name:"workoutmenager",
-    }
+     data(){
+   return {
+    store
+   };
+  },
+  methods: {
+    showworkout(){
+        console.log("start");
 
+        this.store.nameuser=[],
+        
+        db.collection("users").where("id", "==", String(store.currentUser))
+                        .get()
+                        .then((query) => {           
+                              query.forEach((doc) => {
+                                    const data = doc.data();
+                                        this.builder.nameuser.push(
+                                            data.name,
+                                        );
+                              });
+                        });
+        },
+    }
+}
 </script>
 
 <style scoped>

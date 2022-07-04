@@ -2,13 +2,17 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      needsUser: false,
+    },
   },
   {
     path: '/about',
@@ -67,6 +71,16 @@ const routes = [
     path: '/variables',
     name: 'variables',
     component: () => import(/* webpackChunkName: "variables" */  '../variables.js')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: ()  => import(/* webpackChunkName: "login" */  '../views/login.vue')
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: () => import(/* webpackChunkName: "signup" */  '../views/signup.vue')
   }
 ]
 

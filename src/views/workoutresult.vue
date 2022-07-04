@@ -314,7 +314,13 @@
                          </div>
  </div>
 </div>
-
+<div id="savebuild" class="col-sm">
+        <router-link to="" v-on:click.native="savebuild()">
+          <button type="button" class="btn btn-primary btn-lg">
+            Save workout
+          </button></router-link>
+        
+      </div>
 </div>
 
 
@@ -334,7 +340,7 @@
 
 <script>
 import store from "@/store";
-
+import { db } from "@/firebase";
 export default {
     name:"workoutresult",
      data() {
@@ -343,6 +349,17 @@ export default {
       };
        
   },
+  methods: {
+    savebuild() {
+      
+      db.collection("users").doc(String(store.currentUser)).set({
+        id: String(store.currentUser),
+        name: String(this.store.workout_type)
+        
+      });
+      console.log("it's happening!");
+    },
+
 
   created(){
  
@@ -353,7 +370,7 @@ i++
  }
   }
     }
-
+  }
 </script>
 
 <style scoped>
