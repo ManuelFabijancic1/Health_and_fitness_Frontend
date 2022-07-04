@@ -29,14 +29,16 @@
 <div class="col">
     
     </div>
-    <div class="col">
+   
+ 
+ </div>
+  <div class="col">
     <div class="displaycomponents">
-                <p> {{store.workout_type}} </p>
+                <p> {{store.nameuser}} </p>
+                <p> {{store.descuser}}</p>
                 
               </div>
     </div>
- 
- </div>
 </div>
 </template>
 <script>
@@ -55,15 +57,20 @@ export default {
         console.log("start");
 
         this.store.nameuser=[],
+        this.store.descuser=[],
         
         db.collection("users").where("id", "==", String(store.currentUser))
                         .get()
                         .then((query) => {           
                               query.forEach((doc) => {
                                     const data = doc.data();
-                                        this.builder.nameuser.push(
+                                        this.store.nameuser.push(
                                             data.name,
                                         );
+                                
+                                        this.store.descuser.push(
+                                            data.desc,
+                                        );  
                               });
                         });
         },
