@@ -1,98 +1,84 @@
 <template>
-  <div>
-    <div class="container">
+ <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mx-auto">
+          <div class="card card-body text-center mt-5">
+            <h1 class="heading display-5 pb-3">Calorie Calculator App</h1>
+            <form id="calorie-form">
 
-      <div class="row">
-        <h2 id="inputs">Weight gain/loss</h2>
-      </div>
+              <div class="form-group row">
+                <label for="age" class="col-sm-2 col-form-label">Age</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="age" placeholder="Ages 15-80">
+                </div>
+              </div>
+  <p></p>
+              <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+                  <div class="col-sm-10" id="form-radio">
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="male" name="customRadioInline1" class="custom-control-input" checked="checked">
+                      <label class="custom-control-label" for="male">Male</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="female" name="customRadioInline1" class="custom-control-input">
+                      <label class="custom-control-label" for="female">Female</label>
+                    </div>  
+                  </div>
+                </div> 
+              </fieldset> 
+<p></p>
+              <div class="form-group row">
+                <label for="weight" class="col-sm-2 col-form-label">Weight</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="weight" placeholder="In kilograms">
+                </div>
+              </div>
+<p></p>
+              <div class="form-group row">
+                <label for="height" class="col-sm-2 col-form-label">Height</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="height" placeholder="In centimeters">
+                </div>
+              </div>
+              <p></p>
+              <div class="form-group row">
+                <legend class="col-form-label col-sm-2 pt-0">Activity</legend>
+                <select class="custom-select col-sm-10" id="list">
+                  <option selected value="1">Sedentary (little or no exercise)</option>
+                  <option value="2">Lightly active (light exercise/sports 1-3 days/week)</option>
+                  <option value="3">Moderately active (moderate exercise/sports 3-5 days/week)</option>
+                  <option value="4">Very active (hard exercise/sports 6-7 days a week)</option>
+                  <option value="5">Extra active (very hard exercise/sports & physical job or 2x training)</option>
+                </select>
+              </div>
+<p></p>
+               <div class="form-group">
+                <p></p>
+                <input  value="Calculate" class="btn btn-primary btn-block" @click="calculateCalories()">
+              </div>
 
-      <div class="row">
-        
-          <div class="btn-group"  data-toggle="buttons" role="group" aria-label="Basic radio toggle button group">
-            <div class="col">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-            <label class="btn btn-outline-dark" for="btnradio1">Gain</label>
-        </div>
-        <div class="col">
-          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" >
-            <label class="btn btn-outline-dark" for="btnradio2">Loss</label>
-          <br />
-        </div>
-        <div class="col"></div>
-        </div>
-      </div>
-      <div class="row">
-        <h2 id="inputs">Gender</h2>
-      </div>
-      <div class="row">
-        
-           <div class="btn-group "  data-toggle="buttons" role="group" aria-label="Basic radio toggle button group">
-              <div class="col">
-          <input type="radio" class="btn-check" name="btnradio1" id="btnradio3" autocomplete="off" checked>
-            <label class="btn btn-outline-dark" for="btnradio3">Male</label>
-            <br />
-        </div>
-        <div id="col" class="col">
-          <input type="radio" class="btn-check" name="btnradio1" id="btnradio4" autocomplete="off" >
-            <label class="btn btn-outline-dark" for="btnradio4">Female</label><br />
-        </div>
-        <div class="col"></div>
-        </div>
-      </div>
-      <div class="row">
-        <h2 id="inputs">Activity</h2>
-      </div>
-      <div id="row" class="row">
-        <div class="btn-group "  data-toggle="buttons" role="group" aria-label="Basic radio toggle button group">
-        <div class="col">
-          <input type="radio" class="btn-check" name="btnradio2" id="btnradio5" autocomplete="off" checked>
-            <label class="btn btn-outline-dark" for="btnradio5">Light</label><br />
-        </div>
-        <div id="col" class="col">
-          <input type="radio" class="btn-check" name="btnradio2" id="btnradio6" autocomplete="off" >
-            <label class="btn btn-outline-dark" for="btnradio6">Average</label><br />
-        </div>
-        <div class="col">
-          <input type="radio" class="btn-check" name="btnradio2" id="btnradio7" autocomplete="off" >
-            <label class="btn btn-outline-dark" for="btnradio7">Heavy</label><br />
-        </div>
-        </div>
-      </div>
-      <div class="row">
-        <h2 id="inputs">Weight</h2>
-      </div>
-      <div id="row">
-        <input type="number" id="weight" />
-      </div>
+            </form>
 
-      <div class="row">
-        <h2 id="inputs">Height</h2>
-      </div>
-      <div id="row">
-        <input type="number" id="Height" />
-      </div>
+            <div id="loading">
+              <img src="/src/assets/Loading.gif" alt="">
+            </div>
+            
+            <div id="results" class="pt-4">
+              <h5>Total Calories</h5>
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="number" class="form-control" id="total-calories" disabled>
 
-      <div class="row">
-        <h2 id="inputs">Age</h2><br>
-      </div>
-      <div id="row">
-        <input type="number" id="Age" />
-      </div>
-
-      <div id="row" class="row">
-        <div class="col"></div>
-        <div id="calories" class="col2">
-          <router-link to="caloriesresult">
-            <button type="button" class="btn btn-danger btn-lg">
-              Calculate calories
-            </button>
-          </router-link>
+                </div>
+              </div>                       
+            </div>
+          </div>
         </div>
-        <div class="col"></div>
       </div>
     </div>
-  </div>
-</template>
+ </template>  
 <style scoped>
 #inputs {
   text-align: left;
@@ -109,8 +95,66 @@
   margin-bottom:10px;
 }
 </style>
+
 <script>
+import store from '@/store.js'
 export default {
   name: "calorieintake",
-};
+   data() {
+    return{ 
+      store,
+      };
+    },
+
+
+methods: {
+
+ calculateCalories() {
+  
+  const age = document.getElementById('age');
+  const gender = document.querySelector('input[name="customRadioInline1"]:checked');
+  const weight = document.getElementById('weight');
+  const height = document.getElementById('height');
+  const activity = document.getElementById('list').value;
+  const totalCalories = document.getElementById('total-calories');
+  
+  console.log("phase1")
+  
+  if (age.value === '' || weight.value === '' || height.value === '' || 80 < age.value || age.value < 15) {
+    alert('Please make sure the values you entered are correct')
+  } else if(gender.id === 'male' && activity === "1") {
+    totalCalories.value = 1.2 * (66.5 + (13.75 * parseFloat(weight.value)) + (5.003 * parseFloat(height.value)) - (6.755 * parseFloat(age.value)));
+  } else if(gender.id === 'male' && activity === "2") {
+    totalCalories.value = 1.375 * (66.5 + (13.75 * parseFloat(weight.value)) + (5.003 * parseFloat(height.value)) - (6.755 * parseFloat(age.value)));
+  } else if (gender.id === 'male' && activity === "3") {
+    totalCalories.value = 1.55 * (66.5 + (13.75 * parseFloat(weight.value)) + (5.003 * parseFloat(height.value)) - (6.755 * parseFloat(age.value)));
+  } else if(gender.id === 'male' && activity === "4") {
+    totalCalories.value = 1.725 * (66.5 + (13.75 * parseFloat(weight.value)) + (5.003 * parseFloat(height.value)) - (6.755 * parseFloat(age.value)));
+  } else if(gender.id === 'male' && activity === "5") {
+    totalCalories.value = 1.9 * (66.5 + (13.75 * parseFloat(weight.value)) + (5.003 * parseFloat(height.value)) - (6.755 * parseFloat(age.value)))
+    ;
+  } else if(gender.id === 'female' && activity === "1") {
+    totalCalories.value = 1.2 * (655 + (9.563 * parseFloat(weight.value)) + (1.850 * parseFloat(height.value)) - (4.676 * parseFloat(age.value)));
+  } else if(gender.id === 'female' && activity === "2") {
+    totalCalories.value = 1.375 * (655 + (9.563 * parseFloat(weight.value)) + (1.850 * parseFloat(height.value)) - (4.676 * parseFloat(age.value)));
+  } else if(gender.id === 'female' && activity === "3") {
+    totalCalories.value = 1.55 * (655 + (9.563 * parseFloat(weight.value)) + (1.850 * parseFloat(height.value)) - (4.676 * parseFloat(age.value)));
+  } else if(gender.id === 'female' && activity === "4") {
+    totalCalories.value = 1.725* (655 + (9.563 * parseFloat(weight.value)) + (1.850 * parseFloat(height.value)) - (4.676 * parseFloat(age.value)));
+  } else {
+    totalCalories.value = 1.9 * (655 + (9.563 * parseFloat(weight.value)) + (1.850 * parseFloat(height)) - (4.676 * parseFloat(age.value)));
+  } 
+   console.log("phase2")
+this.store.totalcalories= totalCalories;
+ console.log("phase3")
+  document.getElementById('results').style.display = 'block';
+
+  document.getElementById('loading').style.display = 'none';
+
+   console.log("phase4")
+  
+},
+
+},
+}
 </script>

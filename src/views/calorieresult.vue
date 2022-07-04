@@ -1,22 +1,13 @@
 <template>
-  <div class="container">
-    <div class='row'>
-        <div class='text'>Maintain weight: </div>
-        <div class='output'> 2674 cal/day</div>
-    </div><br>
-    <div class='row'>
-        <div class='text'>Mild weight loss: </div>
-        <div class='output'> 2424 cal/day</div>
-    </div><br>
-    <div class='row'>
-        <div class='text'>Weight loss: </div>
-        <div class='output'> 2714 cal/day</div>
-    </div><br>
-    <div class='row'>
-        <div class='text'>Extreme weight loss:</div>
-        <div class='output'> 1647 cal/day</div>
-    </div>
-  </div>
+ <div id="results" class="pt-4">
+              <h5>Total Calories</h5>
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="number" class="form-control" id="total-calories" disabled>{{store.totalcalories}}
+
+                </div>
+              </div>                       
+            </div>
 </template>
 
 <style scoped>

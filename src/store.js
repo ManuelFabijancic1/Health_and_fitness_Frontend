@@ -1,6 +1,9 @@
 
 
 export default {
+    
+        currentUser: null,
+   
    
     workout_type:"",
     muscle_groups:[],
@@ -40,6 +43,10 @@ export default {
     wakeuphours:"",
     wakeupmins:"",
     gotosleephours:"",
-    gotosleepmins:""
+    gotosleepmins:"",
+
+    totalcalories:"",
+
+    nameuser:[],
     }
 
