@@ -4,7 +4,7 @@ import axios from 'axios'
 
 //vezan za backend
 let Service = axios.create({
-    baseURL: 'http://localhost:3000/',
+    baseURL: 'https://wa-backend1423.herokuapp.com/',
     timeout: 3000
 })
 
