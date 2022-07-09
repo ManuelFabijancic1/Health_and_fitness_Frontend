@@ -133,7 +133,7 @@ this.store.slika_source = []
 
 if(this.store.muscle_groups.includes("arms",[0]))
 {
-  fetch(`http://localhost:3000/arms/${this.store.workout_type}/${this.store.workout_dificulty}`)
+  fetch(`https://wa-backend1423.herokuapp.com/arms/${this.store.workout_type}/${this.store.workout_dificulty}`)
  .then(response => {
  return response.json()
  })
@@ -170,7 +170,7 @@ console.log("arms")
   
  if(this.store.muscle_groups.includes("back",[0]))
 {
-   fetch(`http://localhost:3000/back/${this.store.workout_type}/${this.store.workout_dificulty}`)
+   fetch(`https://wa-backend1423.herokuapp.com/back/${this.store.workout_type}/${this.store.workout_dificulty}`)
  .then(Response => {
  return Response.json()
  })
@@ -200,7 +200,7 @@ console.log("back")
 
 if(this.store.muscle_groups.includes("abs",[0]))
 {
-  fetch(`http://localhost:3000/abs/${this.store.workout_type}/${this.store.workout_dificulty}`)
+  fetch(`https://wa-backend1423.herokuapp.com/abs/${this.store.workout_type}/${this.store.workout_dificulty}`)
  .then(Response => {
  return Response.json()
  })
@@ -230,7 +230,7 @@ console.log("abs")
 
   if(this.store.muscle_groups.includes("legs",[0]))
 {
-  fetch(`http://localhost:3000/legs/${this.store.workout_type}/${this.store.workout_dificulty}`)
+  fetch(`https://wa-backend1423.herokuapp.com/legs/${this.store.workout_type}/${this.store.workout_dificulty}`)
  .then(Response => {
  return Response.json()
  })
@@ -259,7 +259,7 @@ this.store.map1.forEach(item => this.store.slika_source.push({[item.src1]: item.
 
  if(this.store.muscle_groups.includes("chest",[0]))
 {
-  fetch(`http://localhost:3000/chest/${this.store.workout_type}/${this.store.workout_dificulty}`)
+  fetch(`https://wa-backend1423.herokuapp.com/chest/${this.store.workout_type}/${this.store.workout_dificulty}`)
  .then(Response => {
  return Response.json()
  })
